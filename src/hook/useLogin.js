@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+const { REACT_APP_API_ENDPOINT } = process.env;
 
 export const useLogin = () => {
   const [isLoading, setIsLoading] = useState(null);
@@ -9,14 +10,11 @@ export const useLogin = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch(
-      "https://mern-workout-backend-a5b4.onrender.com/api/user/login",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      }
-    );
+    const response = await fetch(`${REACT_APP_API_ENDPOINT}/api/user/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
 
     const json = await response.json();
 
