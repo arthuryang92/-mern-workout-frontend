@@ -1,6 +1,8 @@
 import { useWorkoutsContext } from "../hook/useWorkoutsContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useAuthContext } from "../hook/useAuthContext";
+const { REACT_APP_API_ENDPOINT } = process.env;
+
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();

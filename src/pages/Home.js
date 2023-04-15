@@ -3,6 +3,7 @@ import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 import { useWorkoutsContext } from "../hook/useWorkoutsContext";
 import { useAuthContext } from "../hook/useAuthContext";
+const { REACT_APP_API_ENDPOINT } = process.env;
 
 const Home = () => {
   // const [workouts, setWorkouts] = useState(null)

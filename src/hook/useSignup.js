@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+const { REACT_APP_API_ENDPOINT } = process.env;
 
 export const useSignup = () => {
   const [isLoading, setIsLoading] = useState(null);

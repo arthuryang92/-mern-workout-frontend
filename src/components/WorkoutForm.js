@@ -9,6 +9,7 @@ const WorkoutForm = () => {
   const [reps, setReps] = useState("");
   const [error, setError] = useState("");
   const [singleDetails, setSingleDetails] = useState([]);
+  const { REACT_APP_API_ENDPOINT } = process.env;
   const handleSubmit = async (e) => {
     e.preventDefault();
 
